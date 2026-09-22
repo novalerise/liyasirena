@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
+
+  <title>Избранное · Liya Sirena</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <div class="container">
+
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>/</span>
+      <span>Избранное</span>
+    </div>
+
+    <h1 class="page-title">Избранное</h1>
+
+    <div class="favorites" id="favoritesContainer">
+      <p class="favorites__loading">Загрузка...</p>
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/favorites.js"></script>
+
+  <style>
+    .favorites__loading {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--ink-light);
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .favorites__empty {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .favorites__empty svg {
+      width: 64px;
+      height: 64px;
+      stroke: var(--ink-light);
+      fill: none;
+      stroke-width: 1;
+      margin-bottom: 24px;
+      opacity: 0.4;
+    }
+
+    .favorites__empty h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    .favorites__empty p {
+      color: var(--ink-soft);
+      margin-bottom: 32px;
+    }
+
+    .favorites__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .favorites__count {
+      font-size: 11px;
+      color: var(--ink-light);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .favorites__clear {
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .favorites__clear:hover {
+      color: var(--red);
+      border-color: var(--red);
+    }
+  </style>
+
+</body>
+</html>

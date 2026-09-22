@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
+
+  <title>Товар · Liya Sirena</title>
+  <meta name="description" content="Описание товара">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <div class="container">
+
+    <div class="breadcrumbs" id="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>/</span>
+      <a href="catalog.html">Каталог</a>
+    </div>
+
+    <div id="productContainer">
+      <div class="product-skeleton">
+        <div class="product-skeleton__image"></div>
+        <div class="product-skeleton__info">
+          <div class="product-skeleton__line" style="width:30%"></div>
+          <div class="product-skeleton__line" style="width:80%; height:32px;"></div>
+          <div class="product-skeleton__line" style="width:40%"></div>
+          <div class="product-skeleton__line" style="width:60%"></div>
+          <div class="product-skeleton__line" style="width:100%; height:100px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="similar" id="similarSection" style="display:none">
+      <h2 class="similar__title">Похожие товары</h2>
+      <div class="products-grid" id="similarGrid"></div>
+    </section>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/product.js"></script>
+
+</body>
+</html>

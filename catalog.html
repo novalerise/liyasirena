@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
+
+  <title>Каталог · Liya Sirena</title>
+  <meta name="description" content="Каталог корейской и люксовой косметики Liya Sirena.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <div class="container">
+
+    <div class="breadcrumbs" id="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>/</span>
+      <span id="crumbCurrent">Каталог</span>
+    </div>
+
+    <h1 class="page-title" id="pageTitle">Каталог</h1>
+
+    <div class="catalog">
+
+      <aside class="catalog__sidebar" id="sidebar">
+
+        <button class="catalog__filter-close" id="filterClose" aria-label="Закрыть">
+          <svg viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <!-- Раздел -->
+        <div class="filter">
+          <h3 class="filter__title">Раздел</h3>
+          <div class="filter__options" id="lineFilter">
+            <label class="filter-option">
+              <input type="radio" name="line" value="" checked>
+              <span class="filter-option__box"></span>
+              <span class="filter-option__label">Все</span>
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="line" value="kbeauty">
+              <span class="filter-option__box"></span>
+              <span class="filter-option__label">Skin Care</span>
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="line" value="luxury">
+              <span class="filter-option__box"></span>
+              <span class="filter-option__label">Luxury</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Поиск -->
+        <div class="filter">
+          <h3 class="filter__title">Поиск</h3>
+          <div class="search">
+            <input type="text" id="searchInput" placeholder="Название товара..." autocomplete="off">
+            <div class="search__suggest" id="searchSuggest"></div>
+          </div>
+        </div>
+
+        <!-- Бренд -->
+        <div class="filter">
+          <h3 class="filter__title">Бренд</h3>
+          <div class="filter__options" id="brandFilter"></div>
+        </div>
+
+        <!-- Категория -->
+        <div class="filter">
+          <h3 class="filter__title">Категория</h3>
+          <div class="filter__options" id="categoryFilter"></div>
+        </div>
+
+        <!-- Тип кожи -->
+        <div class="filter">
+          <h3 class="filter__title">Тип кожи</h3>
+          <div class="filter__options" id="skinFilter"></div>
+        </div>
+
+        <!-- Проблема -->
+        <div class="filter">
+          <h3 class="filter__title">Проблема</h3>
+          <div class="filter__options" id="concernFilter"></div>
+        </div>
+
+        <!-- Цена -->
+        <div class="filter">
+          <h3 class="filter__title">Цена, ₽</h3>
+          <div class="price-range">
+            <input type="number" id="priceMin" placeholder="от" min="0">
+            <span>—</span>
+            <input type="number" id="priceMax" placeholder="до" min="0">
+          </div>
+        </div>
+
+        <button class="filter__reset" id="resetFilters">Сбросить фильтры</button>
+
+      </aside>
+
+      <main class="catalog__main">
+
+        <div class="catalog__topbar">
+          <button class="catalog__filter-btn" id="filterOpen">
+            <svg viewBox="0 0 24 24">
+              <line x1="4" y1="6" x2="20" y2="6"/>
+              <line x1="4" y1="12" x2="20" y2="12"/>
+              <line x1="4" y1="18" x2="20" y2="18"/>
+            </svg>
+            Фильтры
+          </button>
+
+          <div class="catalog__count" id="countInfo">Загрузка...</div>
+
+                    <select class="catalog__sort" id="sortSelect">
+            <option value="new">Сначала новые</option>
+            <option value="popular">Сначала хиты</option>
+            <option value="price-asc">Цена ↑</option>
+            <option value="price-desc">Цена ↓</option>
+            <option value="name">По названию</option>
+          </select>
+        </div>
+
+        <div class="active-filters" id="activeFilters"></div>
+
+        <div class="products-grid" id="catalogGrid">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+
+        <div class="catalog__empty" id="emptyState" style="display:none">
+          <svg viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <h3>Ничего не найдено</h3>
+          <p>Попробуйте изменить фильтры</p>
+          <button class="btn btn--outline" onclick="resetFilters()">Сбросить</button>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div class="modal" id="quickView">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__content">
+      <button class="modal__close" data-close aria-label="Закрыть">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal__body" id="quickViewBody"></div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/catalog.js"></script>
+
+</body>
+</html>

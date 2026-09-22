@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
+
+  <title>О нас · LiyasIrena</title>
+  <meta name="description" content="История Дшнфышкутф. Корейский уход и люксовая косметика с доставкой.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <div class="container">
+
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>/</span>
+      <span>О нас</span>
+    </div>
+
+    <h1 class="page-title">О нас</h1>
+
+    <div class="about">
+
+      <div class="about__intro">
+        <p class="about__lead">
+          <span class="shop-name">Liyasirena</span> - это корейский уход
+          и люксовая косметика для тех, кто ценит качество и оригинальность.
+        </p>
+      </div>
+
+      <div class="about__block">
+  <h2 class="about__heading">Как я работаю</h2>
+  <p>
+    Я - <strong>байер в Якутске</strong>. Это значит, что вы не платите
+    за переплаты магазинов и не рискуете купить подделку. Вы говорите,
+    что нужно, я нахожу и заказываю, вы получаете оригинал.
+  </p>
+  <p>
+    Сроки зависят от бренда и позиции - обычно <strong>от нескольких дней</strong>.
+    Точную информацию по вашему заказу скажу в WhatsApp или Telegram.
+  </p>
+</div>
+
+      <div class="about__block">
+        <h2 class="about__heading">Почему под заказ</h2>
+        <p>
+          Косметика - продукт, который портится, особенно люкс с натуральными
+          маслами и активными компонентами. Держать склад - значит рисковать
+          свежестью. Мы работаем <strong>под заказ</strong>, чтобы каждый
+          продукт приезжал к вам <strong>свежим</strong> и только что от
+          поставщика.
+        </p>
+        <p>
+          Сроки обычно <strong>10-21 день</strong> - зависит от бренда и страны.
+          Точный срок для вашего заказа скажем в WhatsApp или Telegram.
+        </p>
+      </div>
+
+      <div class="about__block">
+        <h2 class="about__heading">Что вы получите</h2>
+        <ul class="about__list">
+          <li>Только <strong>оригинальные</strong> продукты - никаких реплик</li>
+          <li>Помощь в подборе ухода <strong>под вашу кожу</strong></li>
+          <li>Объяснение состава и правильного применения</li>
+          <li>Честные сроки доставки - без пустых обещаний</li>
+          <li>Постоянную связь на всех этапах заказа</li>
+        </ul>
+      </div>
+
+      <div class="about__cta">
+        <h2 class="about__heading">Хотите подобрать уход?</h2>
+        <p>Напишите мне - помогу разобраться, что вам подойдёт.</p>
+        <div class="about__actions">
+          <a href="#" class="btn btn--whatsapp link-whatsapp">WhatsApp</a>
+          <a href="#" class="btn btn--telegram link-telegram">Telegram</a>
+          <a href="#" class="btn btn--instagram link-instagram">Instagram</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+
+  <style>
+    .about {
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+
+    .about__intro {
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(184, 149, 106, 0.3);
+    }
+
+    .about__lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      line-height: 1.5;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .about__block {
+      margin-bottom: 60px;
+    }
+
+    .about__heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .about__block p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+    }
+
+    .about__block p strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .about__list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about__list li {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      padding: 12px 0 12px 32px;
+      position: relative;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .about__list li:last-child {
+      border-bottom: none;
+    }
+
+    .about__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 22px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+    }
+
+    .about__list strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .about__cta {
+      padding: 50px 40px;
+      background: var(--sand);
+      border-left: 2px solid var(--gold);
+      text-align: center;
+    }
+
+    .about__cta p {
+      margin-bottom: 24px;
+    }
+
+    .about__actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .about__actions .btn {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .about__actions .btn:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    body.theme-luxury .about__cta {
+      background: #1A1A1A;
+    }
+
+    @media (max-width: 768px) {
+      .about__lead { font-size: 22px; }
+      .about__heading { font-size: 22px; }
+      .about__block { margin-bottom: 40px; }
+      .about__cta { padding: 32px 20px; }
+    }
+  </style>
+
+</body>
+</html>

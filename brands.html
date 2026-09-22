@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
+
+  <title>Бренды · Liya Sirena</title>
+  <meta name="description" content="Все бренды корейской и люксовой косметики в Liya Sirena.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <div class="container">
+
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>/</span>
+      <span>Бренды</span>
+    </div>
+
+    <h1 class="page-title">Бренды</h1>
+
+    <p class="brands-intro">
+      Работаю с проверенными брендами корейского ухода и люксовой косметики.
+      Выберите бренд - откроется каталог с его продуктами.
+    </p>
+
+    <section class="brands-section-v2">
+      <h2 class="brands-section-v2__title">Корейский уход</h2>
+      <div class="brands-grid-v2" id="kbeautyBrands"></div>
+    </section>
+
+    <section class="brands-section-v2">
+      <h2 class="brands-section-v2__title">Люкс</h2>
+      <div class="brands-grid-v2" id="luxuryBrands"></div>
+    </section>
+
+    <div class="brands-cta">
+      <h3 class="brands-cta__title">Не нашли нужный бренд?</h3>
+      <p class="brands-cta__text">
+        Работаю на заказ - могу заказать косметику любого бренда.
+        Напишите мне, что ищете.
+      </p>
+      <div class="brands-cta__actions">
+        <a href="#" class="btn btn--outline link-whatsapp">WhatsApp</a>
+        <a href="#" class="btn btn--outline link-telegram">Telegram</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('data/products.json')
+        .then(res => res.json())
+        .then(products => {
+          const kbeauty = [...new Set(
+            products.filter(p => p.line === 'kbeauty').map(p => p.brand)
+          )].sort();
+
+          const luxury = [...new Set(
+            products.filter(p => p.line === 'luxury').map(p => p.brand)
+          )].sort();
+
+          const kEl = document.getElementById('kbeautyBrands');
+          const lEl = document.getElementById('luxuryBrands');
+
+          if (kEl) kEl.innerHTML = kbeauty.map(b => renderBrand(b, 'kbeauty')).join('');
+          if (lEl) lEl.innerHTML = luxury.map(b => renderBrand(b, 'luxury')).join('');
+        })
+        .catch(err => console.error('Ошибка:', err));
+
+      function renderBrand(brand, line) {
+        return `<a href="catalog.html?line=${line}&brand=${encodeURIComponent(brand)}" class="brand-card-v2">${brand}</a>`;
+      }
+    });
+  </script>
+
+</body>
+</html>
